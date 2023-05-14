@@ -45,7 +45,7 @@ class LinkedList
 
     end
 
-   def insert(position, *values)
+    def insert(position, *values)
     new_arr = [@head.value]
     
     
@@ -72,7 +72,7 @@ class LinkedList
         new_arr.each{ |i| append(i) }
     end
 
-   end
+    end
 
     def includes?(item)
         if !@head
@@ -137,7 +137,7 @@ class LinkedList
                 end
             ret = prev.next
             prev.next = nil
-            p ret.value
+             ret.value
         end
     end
 
