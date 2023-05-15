@@ -159,6 +159,4 @@ class LinkedList
         end
     
     end
-
-
 end

@@ -60,6 +60,7 @@ RSpec.describe LinkedList do
         linkedlist.append("Noel")
         linkedlist.append("Juan")
         linkedlist.append("Jones")
+        
         expect(linkedlist.to_string).to eq("Margaret Noel Juan Jones")
         expect(linkedlist.count).to eq(4)
         linkedlist.insert(1, "insert_1", "insert_2")
