@@ -23,11 +23,19 @@ RSpec.describe BeatBox do
         expect(bb.list.to_string).to eq("deep doo ditt woo hoo shu")
         end
 
-        #it "plays sound" do
-          #  bb = BeatBox.new
-           # bb.append("ah rown da whirld ah rown da whir uld ah rown da whirld ah rown da whir uld ah rown da whirld ah rown da whir uld ah rown da whirld ah rown da whir uld ah rown da whirld ah rown da whir uld ah rown da whirld ah rown da whir uld ")
-           # bb.play
-       # end
+        it "plays sound" do
+            bb = BeatBox.new
+            bb.append("deep doo ditt woo hoo shu not_a_beat")
+            bb.play(1, 'Boing' )
+        end
+
+       it "Validates beats" do
+        bb = BeatBox.new
+        bb.append("deep doo notbeat")
+        expect(bb.list.count).to eq (2)
+        expect(bb.list.to_string).to eq("deep doo")
+       end
+        
 
 
 end

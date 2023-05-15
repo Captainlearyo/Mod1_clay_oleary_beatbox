@@ -5,17 +5,29 @@ class BeatBox
     def initialize()
        
         @list = LinkedList.new() 
-
+        @valid_beats = ["tee", "dee", "deep", "bop", "boop", "la", "na", "ditt", "woo", "hoo", "doo", "shu"]
     end  
 
-    def append(string)
-        new_arr = string.split(" ")
-        new_arr.each{ |i| @list.append(i) }
+
+
+    def validate(string)
+        arr = string.split(" ")
+        new_arr = []
+        arr.each{ |i| 
+            if @valid_beats.include?(i)
+                new_arr << i
+            end
+        }
+        new_arr
     end
 
-    def play
-        
-        `say -r 10 -v Boing #{list.to_string}`
+    def append(string)
+        arr = validate(string)
+        arr.each{ |i| @list.append(i) }
+    end
+
+    def play(rate, voice)
+        `say -r #{rate} -v #{voice} #{list.to_string}`
     end
 
 end
